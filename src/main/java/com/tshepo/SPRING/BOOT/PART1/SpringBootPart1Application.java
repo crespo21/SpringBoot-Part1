@@ -1,24 +1,29 @@
 package com.tshepo.SPRING.BOOT.PART1;
 
-import com.tshepo.SPRING.BOOT.PART1.Dao.FakeRepo;
+import com.tshepo.SPRING.BOOT.PART1.Dao.FakeRepository;
+import com.tshepo.SPRING.BOOT.PART1.service.UserServiceImplementation;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Collections;
-import java.util.Scanner;
 
 @SpringBootApplication
 class Application {
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
+
 		SpringApplication application = new SpringApplication(Application.class);
 		application.setDefaultProperties(Collections.singletonMap("server.port", "8888"));
 		application.run(args);
-		FakeRepo fakeRepo = new FakeRepo();
-		System.out.println(fakeRepo.User(1));
-		System.out.println(fakeRepo.insertUser(1,"ss","dd"));
-		System.out.println(fakeRepo.findUserById(1));
-		System.out.println(fakeRepo.deleteUser(1));
+		System.out.println("\n"+"***User contents From Fake Repository*****");
+		FakeRepository fakeRepository = new FakeRepository();
+			System.out.println(fakeRepository.insertUser(1, "Lesley","jones"));
+		    System.out.println(fakeRepository.findUserById(1));
+		    System.out.println(fakeRepository.deleteUser(1)+"\n");
+			System.out.println("****User contents From User Service Implementation****");
+		UserServiceImplementation userServiceImplementation = new  UserServiceImplementation(fakeRepository);
+		    System.out.println(userServiceImplementation.addUser(1, "Lesley","jones"));
+			System.out.println(userServiceImplementation.removeUser(1));
+		    System.out.println(userServiceImplementation.getUser(1));
 	}
 }
 

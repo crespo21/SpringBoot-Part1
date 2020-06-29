@@ -4,9 +4,9 @@ services:
     image: postgres:9.6
 
     environment:
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=pass
-      - POSTGRES_DB=umuzi
+      - POSTGRES_USER=venus
+      - POSTGRES_PASSWORD=pass2
+      - POSTGRES_DB=springApp
     volumes:
       - ./gitignore/postgresql:/var/lib/postgresql/data
     ports:
@@ -16,4 +16,4 @@ services:
     image: adminer
     restart: always
     ports:
-      - 8888:8080
+      - 8081:8080

@@ -15,33 +15,9 @@ public class User {
         this.userSurname = userSurname;
     }
 
-    public int getUserId() {
-
-        return  userId;
-    }
-
-    public int setUserId(int userId) {
-
-        this.userId = userId;
-        return userId;
-    }
-
-    public  String getUserName() {
-
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-
-        this.userName = userName;
-    }
-
-    public  String getUserSurname() {
+    public static String getUserName(String userName) { return userName; }
+    public static String getUserSurname(String userSurname) {
         return userSurname;
     }
 
-    public void setUserSurname(String userSurname) {
-
-        this.userSurname = userSurname;
-    }
 }
