@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.tshepo.SPRING.BOOT.PART1.UserServiceImplementationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-06-29T14:40:11" hostname="admin1-ThinkCentre-M72e" time="0.093">
-  <properties/>
-  <testcase name="testInsertUser()" classname="com.tshepo.SPRING.BOOT.PART1.UserServiceImplementationTest" time="0.093"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

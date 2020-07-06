@@ -8,7 +8,7 @@ import static com.tshepo.SPRING.BOOT.PART1.model.User.*;
 public class FakeRepository implements FakeRepositoryInterface{
 
     //creating an object with list of user
-   private static ArrayList<User> userArrayList = new ArrayList<>();
+   private static final ArrayList<User> userArrayList = new ArrayList<>();
 
    //add  user into the list
     @Override
