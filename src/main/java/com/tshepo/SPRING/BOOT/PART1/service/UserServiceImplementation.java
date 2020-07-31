@@ -26,7 +26,7 @@ public class UserServiceImplementation implements UserService {
     // find user by calling getUser from Fake Repository class
     @Override
     public String getUser(long userId) {
-        System.out.println(fakeRepository.findUserById(1)); ;
+        System.out.println("Hello " + fakeRepository.findUserById(1));
         return null;
     }
 }
