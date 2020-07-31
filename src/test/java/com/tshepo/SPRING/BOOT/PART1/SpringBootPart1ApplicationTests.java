@@ -1,30 +1,22 @@
 package com.tshepo.SPRING.BOOT.PART1;
 
-import com.tshepo.SPRING.BOOT.PART1.Dao.FakeRepository;
+import com.tshepo.SPRING.BOOT.PART1.service.UserService;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.SpringBootConfiguration;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.util.Assert;
 
-@SpringBootConfiguration
+
+@SpringBootTest(classes = Application.class)
 class SpringBootPart1ApplicationTests {
 
+	@Autowired
+	UserService userService;
 	@Test
-	void contextLoads() {
+	void contextLoads() throws NoSuchMethodException {
+		Assert.isTrue(true, userService.addUser(1,"",""));
+		Assert.isTrue(true, userService.removeUser(1));
+		Assert.isTrue(true, userService.getUser(1));
 	}
-	@Test
-	public void testInsertUser() {
-		assertThat(Boolean.parseBoolean(new FakeRepository()
-				.insertUser(1,
-						"theo","park") + " is entered"));
-	}
-	@Test
-	public void deleteUserTest(){
-		assertThat(Boolean.parseBoolean(new FakeRepository()
-				.deleteUser(1)+" is removed"));
-	}
-	@Test
-	public void UserTest(){
-		assertThat(Boolean.parseBoolean(String.valueOf(new FakeRepository()
-				.findUserById(1))));
-	}
+
 }

@@ -15,16 +15,16 @@ public class FakeRepository implements FakeRepositoryInterface{
     public  String insertUser(int userId, String userName, String userSurname){
      User user = new User(userId,userName,userSurname);
      userArrayList.add(user);
-        return userName + " entered";
+        return userName ;
     }
 
     //search for user from the list
     @Override
     public  String findUserById(int userId){
         for (User ignored: userArrayList){
-            return  "Hello " + User.getUserName("Crespo") + User.getUserSurname(" Venus");
+            return  "Hello " + User.getUserName("Fitz") + User.getUserSurname(" Simons");
         }
-        return "Hello " + getUserName("Crespo") + User.getUserSurname(" Venus");
+        return getUserName("Carlson");
     }
 
     //remove user from list
@@ -32,6 +32,6 @@ public class FakeRepository implements FakeRepositoryInterface{
     public  String deleteUser(int userId) {
         User user = new User(userId,"","");
         userArrayList.remove(user);
-        return getUserName("Earl") + " removed";
+        return getUserName("Ward") ;
     }
 }
